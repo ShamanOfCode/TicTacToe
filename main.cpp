@@ -1,12 +1,12 @@
 #include <iostream>
-#include <stdlib.h>
+#include <stdlib.h>    // For exit() line 235
 
 using namespace std;
 
 // Game on
 bool gameOn = true;
 
-// Grid
+// Global Grid Variables
 char sq1 = '1';
 char sq2 = '2';
 char sq3 = '3';
@@ -17,6 +17,7 @@ char sq7 = '7';
 char sq8 = '8';
 char sq9 = '9';
 
+// Printing the grid now
 int grid() {
 	cout << sq1 << "|" << sq2 << "|" << sq3 << endl;
 	cout << "-|-|-" << endl;
@@ -222,17 +223,17 @@ int checking() {
 		gameOn = false;
 	}
 
-
 	return 0;
 }
 
 int main() {
+	// run functions when gameOn == true
 	while (gameOn == true) {
 		playerXturn();
 		player0turn();
 		checking();
 	}
-	exit(EXIT_SUCCESS);
+	exit(EXIT_SUCCESS); // exiting game
 
 	return 0;
 }
